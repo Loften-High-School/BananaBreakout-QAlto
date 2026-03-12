@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MonkeyScript : MonoBehaviour 
 {
@@ -78,9 +79,44 @@ public class MonkeyScript : MonoBehaviour
 			// increase the score
 			score++;
 			scoreText.text = "Score: " + score;
+			if(score >= 16)
+			{
+				SceneManager.LoadScene("Menu");
+			}
 
 			// destroy the block
 			Destroy (otherObject.gameObject);
 		}
+
 	}
+
+	void OnTriggerEnter2D(Collider2D otherObject)
+	{
+		// get the name of the object we triggered
+		string otherName = otherObject.gameObject.name;
+		Debug.Log ("Trigger on " + otherName);
+
+
+switch (otherName) 
+		{
+		
+		   case "MonkeyUp1":
+		   
+		   case "MonkeyUp2":
+		   
+		   case "MonkeyUp3":
+		   
+		   case "MonkeyUp4":
+				{
+					speed += 80.0f;
+				}
+            	break;
+
+				case null:
+				break;
+		}
+
+	}
+
+	
 }
