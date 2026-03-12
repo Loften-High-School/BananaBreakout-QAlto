@@ -81,7 +81,7 @@ public class MonkeyScript : MonoBehaviour
 			scoreText.text = "Score: " + score;
 			if(score >= 16)
 			{
-				SceneManager.LoadScene("Level2");
+				SceneManager.LoadScene("Menu");
 			}
 
 			// destroy the block
