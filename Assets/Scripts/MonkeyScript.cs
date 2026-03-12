@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MonkeyScript : MonoBehaviour 
 {
@@ -78,6 +79,10 @@ public class MonkeyScript : MonoBehaviour
 			// increase the score
 			score++;
 			scoreText.text = "Score: " + score;
+			if(score >= 16)
+			{
+				SceneManager.LoadScene("Menu");
+			}
 
 			// destroy the block
 			Destroy (otherObject.gameObject);
